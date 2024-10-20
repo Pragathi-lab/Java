@@ -16,14 +16,16 @@ class Quadratic {
         if (d > 0) {
             double r1 = (-b + Math.sqrt(d)) / (2 * a);
             double r2 = (-b - Math.sqrt(d)) / (2 * a);
-            System.out.println("Roots are: " + r1 + " " + r2);
+            System.out.println("Roots are:"+" "+ r1+" "+r2);
         } else if (d == 0) {
-            double r1 = -b / (2 * a);
-            System.out.println("Root is: " + r1);
-        } else {
-            System.out.println("Roots are complex.");
+            double r1 =-b/(2 * a);
+            double r2=-b/(2*a);
+            System.out.println("Root are:"+" "+r1+" "+r2);
+        } else if(d<0) {
+            System.out.println("Roots are rational");
         }
-        
-        input.close(); 
+        else{
+            System.out.println("Invalid input!!");
+        }
     }
-}
+
