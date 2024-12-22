@@ -1,0 +1,36 @@
+class TwoGen<T,V>
+{
+T ob1;
+V ob2;
+TwoGen(T O1,V O2)
+{
+	ob1=O1;
+	ob2=O2;
+}
+T getob1()
+{
+	return ob1;
+}
+V getob2()
+{
+	return ob2;
+}
+void Showtype()
+{
+	System.out.println("Type of T is :"+ob1.getClass().getName());
+	System.out.println("Type of V is :"+ob2.getClass().getName());
+}
+}
+
+class TwoGenDemo
+{
+public static void main(String args[])
+{
+	TwoGen<Integer,Double> idob;
+	idob=new TwoGen <Integer,Double> (10,20.0);//Autoboxing
+	idob.Showtype();
+	int a=idob.getob1();//Autounboxing
+	double d=idob.getob2();//Autounboxing
+	System.out.println("Autounboxed value is "+a+" , "+d);
+}
+}
