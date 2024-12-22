@@ -1,54 +1,65 @@
+import java.util.*;
 abstract class Shape{
-int dim1,dim2;
-Shape(int x,int y)
+int dim1;
+int dim2;
+abstract void printArea();
+}
+class Rectangle extends Shape
 {
-dim1=x;
-dim2=y;
-}
-abstract double printArea();
-}
-
-class Rectangle extends Shape{
 Rectangle(int a,int b)
 {
-super(a,b);
+dim1=a;
+dim2=b;
 }
-double printArea()
+void printArea()
 {
-return dim1*dim2;
+System.out.println("The area of rectangle is :"+ dim1*dim2);
 }
 }
-
-class Triangle extends Shape{
+class Triangle extends Shape
+{
 Triangle(int a,int b)
 {
-super(a,b);
+dim1=a;
+dim2=b;
 }
-double printArea()
+void printArea()
 {
-return 0.5*dim1*dim2;
+System.out.println("The area of triangle is :"+ 0.5*dim1*dim2);
 }
 }
-
-class Circle extends Shape{
-Circle(int a,int b)
+class Circle extends Shape
 {
-super(a,0);
-}
-double printArea()
+Circle(int a)
 {
-return 3.14*dim1*dim1;
+dim1=a;
+}
+void printArea()
+{
+System.out.println("The area of circle is :"+ 3.14*dim1*dim1);
 }
 }
-
-class AbstractDemo{
+class AreaOfShapes{
 public static void main(String args[])
 {
- Rectangle r=new Rectangle(10,20);
- Triangle t=new Triangle(10,20);
- Circle c=new Circle(10,0);
-System.out.println("Area of rectangle:"+r.printArea());
-System.out.println("Area of triangle:"+t.printArea());
-System.out.println("Area of circle:"+c.printArea());
+int l,b,base,height,radius;
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter length of rectangle:");
+l=sc.nextInt();
+System.out.println("Enter breadth of rectangle:");
+b=sc.nextInt();
+System.out.println("Enter length of triange:");
+base=sc.nextInt();
+System.out.println("Enter height of triangle:");
+height=sc.nextInt();
+System.out.println("Enter radius of circle:");
+radius=sc.nextInt();
+
+Rectangle r=new Rectangle(l,b);
+r.printArea();
+Triangle t=new Triangle(base,height);
+t.printArea();
+Circle c=new Circle(radius);
+c.printArea();
 }
 }
